@@ -8,6 +8,10 @@ inputs:
   key:
     description: 'The Google API key'
     required: true
+  image:
+    description: 'Return Base64 to convert to an image'
+    required: false
+    default: false
 outputs:
   response: # id of output
     description: 'The response of the Google API'

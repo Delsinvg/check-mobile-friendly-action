@@ -5,11 +5,12 @@ const axios = require("axios").default;
 try {
     const siteUrl = core.getInput("site");
     const apiKey = core.getInput("key");
+    const showImage = core.getInput("image");
     const apiUrl = 'https://searchconsole.googleapis.com/v1/urlTestingTools/mobileFriendlyTest:run?key=' + apiKey;
 
     axios.post(apiUrl, {
         url: siteUrl,
-        requestScreenshot: true
+        requestScreenshot: showImage
       })
       .then(function (response) {
         if (response.data.mobileFriendliness !== 'MOBILE_FRIENDLY') {
