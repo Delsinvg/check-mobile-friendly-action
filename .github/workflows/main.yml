@@ -1,0 +1,20 @@
+on: [push]
+
+jobs:
+  check_mobile_friendly_job:
+    runs-on: ubuntu-latest
+    name: A job to check the mobile friendliness of a site
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: check mobile friendliness action step
+        uses: ./ # Uses an action in the root directory
+        id: check
+        with:
+          site: 'https://codedor.be'
+          key: ${{ secrets.MOBILE_FRIENDLY_API_KEY}}
+      # Use the output from the `check` step
+      - name: Get the url of the robotstxt
+        run: echo "This is the robots.txt ${{ steps.check.outputs.robots }}"
