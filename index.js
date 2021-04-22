@@ -13,6 +13,7 @@ try {
       })
       .then(function (response) {
         console.log(response);
+        core.setOutput("response", response);
       })
       .catch(function (error) {
         console.log(error);
