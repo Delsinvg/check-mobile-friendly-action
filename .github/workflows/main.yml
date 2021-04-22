@@ -14,7 +14,7 @@ jobs:
         id: check
         with:
           site: 'https://codedor.be'
-          key: ${{ secrets.MobileFriendlyApiKey}}
+          key: ${{ secrets.MOBILE_FRIENDLY_API_KEY}}
       # Use the output from the `check` step
       - name: Get the url of the robotstxt
         run: echo "This is the output ${{ steps.check.outputs.response }}"
