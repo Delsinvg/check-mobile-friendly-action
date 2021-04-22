@@ -11,8 +11,8 @@ try {
         url: siteUrl,
         requestScreenshot: true
       })
-      .then(function (response.data) {
-        console.log(response);
+      .then(function (response) {
+        console.log(response.data);
         core.setOutput("response", response);
       })
       .catch(function (error) {
