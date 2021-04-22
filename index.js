@@ -7,18 +7,17 @@ try {
     const apiKey = core.getInput("key");
     const apiUrl = 'https://searchconsole.googleapis.com/v1/urlTestingTools/mobileFriendlyTest:run?key=' + apiKey;
 
-console.log(apiKey)
-    // axios.post(apiUrl, {
-    //     url: siteUrl,
-    //     requestScreenshot: true
-    //   })
-    //   .then(function (response) {
-    //     console.log(response);
-    //     core.setOutput("response", response);
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
+    axios.post(apiUrl, {
+        url: siteUrl,
+        requestScreenshot: true
+      })
+      .then(function (response) {
+        console.log(response);
+        core.setOutput("response", response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   } catch (error) {
     core.setFailed(error.message);
   }
