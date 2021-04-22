@@ -13,8 +13,8 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: check
         with:
-          site: 'https://codedor.be'
+          site: 'https://codedor.be/'
           key: ${{ secrets.MOBILE_FRIENDLY_API_KEY}}
       # Use the output from the `check` step
-      - name: Get the url of the robotstxt
-        run: echo "This is the output ${{ steps.check.outputs.response }}"
+      - name: Get the output of the Google API
+        run: echo "This website is ${{ steps.check.outputs.response }}"

@@ -12,8 +12,11 @@ try {
         requestScreenshot: true
       })
       .then(function (response) {
-        console.log(response.data);
-        core.setOutput("response", response);
+        if (response.data.mobileFriendliness !== 'MOBILE_FRIENDLY') {
+            core.setFailed("The website is not mobile friendly!");
+        }
+        core.setOutput("response", response.data.mobileFriendliness);
+        console.log(response.data)
       })
       .catch(function (error) {
         console.log(error);
