@@ -4,7 +4,7 @@ inputs:
   site:  # id of input
     description: 'url of the site to check'
     required: true
-    default: 'https://codedor.be'
+    default: 'https://codedor.be/'
   key:
     description: 'The Google API key'
     required: true
