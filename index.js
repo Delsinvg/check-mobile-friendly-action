@@ -13,7 +13,7 @@ try {
       })
       .then(function (response) {
         if (response.data.mobileFriendliness !== 'MOBILE_FRIENDLY') {
-            core.setFailed("The website is not mobile friendly!");
+            core.setFailed("The website is NOT_MOBILE_FRIENDLY");
         }
         core.setOutput("response", response.data.mobileFriendliness);
         console.log(response.data)
